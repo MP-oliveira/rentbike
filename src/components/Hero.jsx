@@ -1,12 +1,12 @@
 import './Hero.css'
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80'
+const HERO_IMAGE = '/hero-bike.png'
 
 function Hero({ onCtaClick }) {
   return (
     <section className="hero">
       <div className="hero__bg">
-        <img src={HERO_IMAGE} alt="Bicicleta na praia" className="hero__img" />
+        <img src={HERO_IMAGE} alt="Pessoas pedalando de bike na orla da praia" className="hero__img" />
         <div className="hero__overlay" aria-hidden="true" />
       </div>
       <div className="hero__content">
