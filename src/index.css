@@ -1,0 +1,62 @@
+/* RentBike Lauro — Direção de marca nível Itaú: limpo, moderno, minimalista */
+:root {
+  --color-primary: #0077b6;
+  --color-primary-hover: #00629a;
+  --color-accent: #ffb703;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafb;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --space-section: clamp(4rem, 10vw, 6rem);
+  --space-block: clamp(1.5rem, 4vw, 2.5rem);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --container: min(1120px, 100vw - 2rem);
+  --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

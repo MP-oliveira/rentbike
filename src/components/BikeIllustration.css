@@ -1,0 +1,57 @@
+.bike-illus {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+  animation: bikeFloat 4s var(--ease-out-expo) infinite;
+}
+
+.bike-illus__wheel,
+.bike-illus__wheel-inner {
+  stroke: var(--color-sun);
+  stroke-width: 3;
+}
+
+.bike-illus__wheel {
+  fill: transparent;
+  stroke-width: 4;
+}
+
+.bike-illus__wheel-inner {
+  fill: var(--color-mid);
+  stroke: none;
+}
+
+.bike-illus__frame {
+  stroke: var(--color-sun);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.bike-illus__body {
+  fill: var(--color-sun);
+  opacity: 0.95;
+}
+
+.bike-illus__joint {
+  fill: var(--color-mid);
+  stroke: var(--color-sun);
+  stroke-width: 2;
+}
+
+.bike-illus__joint-inner {
+  fill: var(--color-dark);
+}
+
+.bike-illus__axle {
+  stroke: var(--color-sun);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+@keyframes bikeFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}

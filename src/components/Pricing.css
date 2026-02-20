@@ -1,0 +1,61 @@
+.pricing {
+  padding: var(--space-section) 1.5rem;
+  background: var(--color-bg);
+}
+
+.pricing__inner {
+  max-width: 22rem;
+  margin: 0 auto;
+}
+
+.pricing__card {
+  background: var(--color-bg);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.pricing__product {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.pricing__value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.pricing__detail {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.pricing__cta {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  background: var(--color-accent);
+  border-radius: 8px;
+  transition: background var(--transition), opacity var(--transition);
+}
+
+.pricing__cta:hover {
+  background: #e6a600;
+}
+
+.pricing__cta:active {
+  opacity: 0.95;
+}

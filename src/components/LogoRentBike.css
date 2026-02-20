@@ -1,0 +1,37 @@
+.logo-rentbike {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.logo-rentbike__rent {
+  letter-spacing: -0.03em;
+  padding-top: 0.06em;
+}
+
+.logo-rentbike__ike {
+  letter-spacing: -0.03em;
+  padding-top: 0.06em;
+}
+
+.logo-rentbike__b {
+  display: inline-flex;
+  align-items: flex-end;
+  margin: 0 -0.2em 0 -0.2em;
+  padding-bottom: 0.02em;
+  height: 1em;
+  color: var(--color-accent);
+  transform: translateY(0.22em);
+}
+
+.logo-rentbike__svg {
+  width: 1.05em;
+  height: 1.22em;
+  display: block;
+  vertical-align: bottom;
+}
