@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
-import Header from './components/Header'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
-import WhyCycle from './components/WhyCycle'
-import BeachSection from './components/BeachSection'
-import OurBikes from './components/OurBikes'
-import QuoteSection from './components/QuoteSection'
+import BeachIllustrationSection from './components/BeachIllustrationSection'
 import Pricing from './components/Pricing'
 import Footer from './components/Footer'
 import CheckoutModal from './components/CheckoutModal'
@@ -47,13 +43,9 @@ function App() {
 
   return (
     <main className="app">
-      <Header />
       <Hero onCtaClick={openCheckout} />
       <HowItWorks />
-      <WhyCycle />
-      <BeachSection />
-      <OurBikes />
-      <QuoteSection />
+      <BeachIllustrationSection />
       <Pricing onCtaClick={openCheckout} />
       <Footer />
       <WhatsAppButton />

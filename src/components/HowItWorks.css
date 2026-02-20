@@ -76,18 +76,18 @@
 }
 
 .how__card[data-step="1"] .how__num {
-  background: var(--color-accent);
-  color: var(--color-text);
+  background: #82C4CA;
+  color: #000;
 }
 
 .how__card[data-step="2"] .how__num {
-  background: var(--color-primary);
-  color: var(--color-bg);
+  background: #B3DCD8;
+  color: #000;
 }
 
 .how__card[data-step="3"] .how__num {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: #F0D19E;
+  color: #000;
 }
 
 .how__label {

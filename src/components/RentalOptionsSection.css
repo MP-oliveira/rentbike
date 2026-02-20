@@ -1,0 +1,113 @@
+/* Réplica do poster Beach Bike: mesmas cores e disposição */
+
+.rental-options {
+  font-family: var(--font);
+  color: #005F7F;
+}
+
+.rental-options__intro {
+  background: #F8F3E5;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rental-options__intro-text {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 42rem;
+}
+
+.rental-options__logo {
+  flex-shrink: 0;
+  width: clamp(2.5rem, 6vw, 3.5rem);
+  height: clamp(2.5rem, 6vw, 3.5rem);
+  border-radius: 50%;
+  background: #F8C244;
+  border: 3px solid #D0973F;
+}
+
+.rental-options__block {
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem);
+  position: relative;
+}
+
+.rental-options__block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 20px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.rental-options__block--diaria {
+  background: #64B0C7;
+}
+
+.rental-options__block--diaria::before {
+  background: #F8F3E5;
+}
+
+.rental-options__block--mensalista {
+  background: #3493A8;
+}
+
+.rental-options__block--mensalista::before {
+  background: #64B0C7;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  height: 20px;
+  top: -1px;
+}
+
+.rental-options__block--avulso {
+  background: #F8F3E5;
+}
+
+.rental-options__block--avulso::before {
+  background: #3493A8;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  height: 20px;
+  top: -1px;
+}
+
+.rental-options__title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: #005F7F;
+}
+
+.rental-options__body {
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  line-height: 1.55;
+  margin: 0;
+  color: #005F7F;
+}
+
+.rental-options__contact {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #005F7F;
+}
+
+.rental-options__contact-item {
+  display: inline-block;
+}
+
+.rental-options__contact-link {
+  color: #005F7F;
+  text-decoration: none;
+}
+
+.rental-options__contact-link:hover {
+  text-decoration: underline;
+}

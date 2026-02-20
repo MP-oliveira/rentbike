@@ -1,11 +1,16 @@
+/* Replica do layout da foto de referência: texto em cima do céu, cantos com local e marca */
+
 .hero {
+  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  position: relative;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-block);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: max(1.25rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(1.25rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+  box-sizing: border-box;
 }
 
 .hero__bg {
@@ -17,68 +22,138 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 58%;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
+/* Bloco principal: canto superior esquerdo, como na foto */
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 28rem;
-  text-align: center;
-}
-
-.hero__kicker {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 1rem;
+  text-align: left;
+  max-width: 22rem;
+  margin-top: 1.5rem;
 }
 
 .hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 6vw, 3.25rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--color-bg);
-  margin-bottom: 0.75rem;
+  font-family: var(--font-hero-title);
+  font-size: clamp(2.5rem, 12vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
   letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  background: linear-gradient(180deg, var(--hero-teal) 0%, var(--hero-teal-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
 }
 
-.hero__title-break {
-  display: block;
-  color: var(--color-accent);
+.hero__title .hero__title-accent,
+.hero__title .hero__title-fat {
+  background: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+}
+
+.hero__title-fat {
+  font-weight: 800;
+  -webkit-text-stroke: 0.035em var(--hero-teal);
+  paint-order: stroke fill;
+  -webkit-paint-order: stroke fill;
 }
 
 .hero__sub {
-  font-size: 1.0625rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 2rem;
+  font-family: var(--font-hero);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0 0 0 1.25rem;
+  max-width: 26ch;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Botão Alugar agora: centralizado na parte inferior do hero, 20px à direita */
+.hero__cta-wrap {
+  position: absolute;
+  left: calc(50% + 20px);
+  bottom: max(2rem, env(safe-area-inset-bottom) + 1rem);
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
 }
 
 .hero__cta {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-hero);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-text);
-  background: var(--color-accent);
-  border-radius: var(--radius-sm);
-  transition: background var(--transition), transform var(--transition);
+  color: #1a1a1a;
+  background: var(--hero-amber);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .hero__cta:hover {
-  background: #e6a600;
+  filter: brightness(1.05);
   transform: translateY(-1px);
 }
 
 .hero__cta:active {
   transform: translateY(0);
+}
+
+/* Local: canto inferior esquerdo, pin branco + texto branco */
+.hero__location {
+  position: absolute;
+  left: max(1.25rem, env(safe-area-inset-left));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.hero__pin {
+  display: block;
+  flex-shrink: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+
+/* Logo: no topo, alinhada à direita; deslocada 20px para baixo */
+.hero__brand {
+  position: absolute;
+  top: max(calc(1.5rem + 35px), calc(env(safe-area-inset-top) + 35px));
+  right: max(1.25rem, env(safe-area-inset-right));
+  z-index: 2;
+}
+
+.hero__brand-img {
+  display: block;
+  height: 5.375rem;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }

@@ -1,0 +1,87 @@
+.beach-illustration {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.beach-illustration__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* Textos em cima da foto */
+.beach-illustration__texts {
+  position: absolute;
+  top: clamp(2.5rem, 14%, 4.5rem);
+  left: clamp(1.25rem, 5vw, 2rem);
+  right: clamp(1.25rem, 5vw, 2rem);
+  transform: translateY(-35px);
+  max-width: 36rem;
+}
+
+.beach-illustration__text {
+  margin: 0;
+  font-family: var(--font);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #1A7183;
+}
+
+/* Bloco DIÁRIA: label + texto */
+.beach-illustration__block-second {
+  margin-top: calc(100px + clamp(0.75rem, 2vw, 1.25rem));
+}
+
+/* Bloco MENSALISTA: label + texto */
+.beach-illustration__block-mensalista {
+  margin-top: calc(80px + clamp(1.25rem, 4vw, 2rem));
+}
+
+/* Bloco AVULSO: label + texto + contato */
+.beach-illustration__block-avulso {
+  margin-top: calc(70px + clamp(1.25rem, 4vw, 2rem));
+}
+
+.beach-illustration__contact {
+  margin-top: calc(85px + 0.75rem);
+  margin-left: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--font);
+  font-size: clamp(1.0625rem, 2.75vw, 1.25rem);
+  font-weight: 700;
+  color: #1A7183;
+}
+
+.beach-illustration__contact-link {
+  color: #1A7183;
+  text-decoration: none;
+}
+
+.beach-illustration__contact-link:hover {
+  text-decoration: underline;
+}
+
+.beach-illustration__contact-item {
+  margin-left: 80px;
+}
+
+.beach-illustration__label {
+  margin: 0 0 0.15em;
+  font-family: var(--font);
+  font-size: calc(clamp(1rem, 2.5vw, 1.25rem) + 2px);
+  font-weight: 700;
+  color: #1A7183;
+}
+
+.beach-illustration__text--second {
+  margin-top: 0;
+  font-size: clamp(1.0625rem, 2.85vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
