@@ -97,17 +97,18 @@
   font-size: 1rem;
   font-weight: 700;
   color: #1a1a1a;
-  background: var(--hero-amber);
-  border: none;
+  background: var(--color-accent);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 999px;
   cursor: pointer;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .hero__cta:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.04);
   transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .hero__cta:active {

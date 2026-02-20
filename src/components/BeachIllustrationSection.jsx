@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import './BeachIllustrationSection.css'
 
 const IMAGE_SRC = '/section-beach-illustration.png'
+const PIX_KEY = '61.455.204/0001-01'
 
 function BeachIllustrationSection() {
+  const [pixCopied, setPixCopied] = useState(false)
+
+  const copyPix = () => {
+    navigator.clipboard.writeText(PIX_KEY).then(() => {
+      setPixCopied(true)
+      setTimeout(() => setPixCopied(false), 2000)
+    })
+  }
   return (
     <section className="beach-illustration">
       <img
@@ -48,7 +58,14 @@ function BeachIllustrationSection() {
             >
               @beachbike_vilas
             </a>
-            <span className="beach-illustration__contact-item">Pix: 61.455.204/0001-01</span>
+            <button
+              type="button"
+              className="beach-illustration__contact-item beach-illustration__contact-copy"
+              onClick={copyPix}
+              title="Copiar chave Pix"
+            >
+              {pixCopied ? 'Copiado!' : 'Pix: 61.455.204/0001-01'}
+            </button>
           </div>
         </div>
       </div>

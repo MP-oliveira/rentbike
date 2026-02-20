@@ -161,14 +161,15 @@
   letter-spacing: 0.02em;
   color: var(--color-text);
   background: var(--color-accent);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   cursor: pointer;
-  transition: background var(--transition), opacity var(--transition);
+  transition: filter var(--transition), opacity var(--transition), border-color var(--transition);
 }
 
 .checkout-submit:hover:not(:disabled) {
-  background: #e6a600;
+  filter: brightness(1.04);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .checkout-submit:disabled {
