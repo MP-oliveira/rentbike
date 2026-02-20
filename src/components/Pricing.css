@@ -4,8 +4,27 @@
 }
 
 .pricing__inner {
-  max-width: 22rem;
+  max-width: 56rem;
   margin: 0 auto;
+}
+
+.pricing__intro {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .pricing__card {

@@ -12,13 +12,11 @@ if (accessToken) {
   mp = MercadoPago
 }
 
-const RENT_AMOUNT = 25
-const RENT_TITLE = 'Aluguel de bicicleta - 30 min | RentBike Lauro'
+const DEFAULT_AMOUNT = 25
 
 /**
  * Cria preferência de pagamento (checkout) para PIX ou cartão.
- * @param {Object} payload - { user_name, user_phone, payment_method, back_url_success, back_url_failure }
- * @returns {Promise<{ preferenceId: string, init_point?: string } | null>}
+ * @param {Object} payload - { user_name, user_phone, payment_method, amount?, title?, ... }
  */
 export async function createPreference(payload) {
   if (!mp) {
@@ -26,14 +24,16 @@ export async function createPreference(payload) {
     return null
   }
 
-  const { user_name, user_phone, payment_method, back_url_success, back_url_failure } = payload
+  const { user_name, user_phone, payment_method, back_url_success, back_url_failure, amount, title } = payload
+  const unitPrice = typeof amount === 'number' ? amount : DEFAULT_AMOUNT
+  const itemTitle = title || 'Aluguel de bicicleta | RentBike Lauro'
 
   const preference = {
     items: [
       {
-        title: RENT_TITLE,
+        title: itemTitle,
         quantity: 1,
-        unit_price: RENT_AMOUNT,
+        unit_price: unitPrice,
         currency_id: 'BRL',
       },
     ],
@@ -84,4 +84,4 @@ export async function getPaymentById(paymentId) {
   }
 }
 
-export { RENT_AMOUNT }
+export { DEFAULT_AMOUNT as RENT_AMOUNT }

@@ -15,6 +15,7 @@ import './App.css'
 
 function App() {
   const [showCheckout, setShowCheckout] = useState(false)
+  const [selectedRentalType, setSelectedRentalType] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
   const [rentalId, setRentalId] = useState(null)
 
@@ -27,7 +28,10 @@ function App() {
     }
   }, [])
 
-  const openCheckout = () => setShowCheckout(true)
+  const openCheckout = (rentalType = null) => {
+    setSelectedRentalType(rentalType)
+    setShowCheckout(true)
+  }
   const closeCheckout = () => setShowCheckout(false)
 
   const onPaymentSuccess = (id) => {
@@ -58,6 +62,7 @@ function App() {
         <CheckoutModal
           onClose={closeCheckout}
           onSuccess={onPaymentSuccess}
+          initialRentalType={selectedRentalType}
         />
       )}
 
